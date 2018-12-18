@@ -15,3 +15,8 @@ paragraph_count = text.split(/\n\n/).length
 puts "#{paragraph_count} paragraphs"
 sentence_count = text.split(/\.|\?\!/).length
 puts "#{sentence_count} sentences"
+# %w builds array with string-separated text
+stopwords = %{the a by on for of are with just but and to the my I has some in}
+words = text.scan(/\w+/)
+keywords = words.select{ |word| !stopwords.include?(word)}
+puts keywords.join(" ")
